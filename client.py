@@ -93,6 +93,6 @@ if __name__ == "__main__":
     model = create_model(X_train.shape[1],num_classes)
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
     client = ECGClient(model, X_train, y_train, X_test, y_test)
-    #fl.client.start_numpy_client(server_address="172.31.6.145:8080", client=client)
-    fl.client.start_client(server_address="172.31.6.145:8080", client=client.to_client())
+    #fl.client.start_numpy_client(server_address="IP:PORT", client=client)
+    fl.client.start_client(server_address="IP:PORT", client=client.to_client())
 
